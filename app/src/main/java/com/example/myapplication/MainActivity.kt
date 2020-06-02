@@ -3,9 +3,7 @@ package com.example.myapplication
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.*
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
+import androidx.lifecycle.*
 import androidx.ui.core.setContent
 import androidx.ui.material.*
 import androidx.ui.tooling.preview.Preview
@@ -13,11 +11,11 @@ import androidx.ui.tooling.preview.Preview
 
 class MainActivity : AppCompatActivity() {
 
-    val bookDesk = testBookDesk()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
+            val bookDesk by state { testBookDesk() }
 
             MaterialTheme {
                 BookDeskViewWithIndicator(bookDesk)

@@ -13,6 +13,7 @@ import androidx.ui.layout.Column
 import androidx.ui.layout.ConstraintLayout
 import androidx.ui.layout.ConstraintSet
 import androidx.ui.material.Button
+import androidx.ui.text.TextStyle
 import androidx.ui.unit.dp
 
 
@@ -57,9 +58,9 @@ fun BookDeskViewWithIndicator(bookDesc: BookDesk) {
         }
         Box(modifier = Modifier.tag("error"), padding = 15.dp) {
             if (empty) {
-                Text(text = "Book desk has an unnamed book!", color = Color.Red)
+                Text(text = "Book desk has an unnamed book!", style = TextStyle(Color.Red))
             } else if (duplicated) {
-                Text(text = "Book desk has duplicated books!", color = Color.Red)
+                Text(text = "Book desk has duplicated books!", style = TextStyle(Color.Red))
             }
         }
     }

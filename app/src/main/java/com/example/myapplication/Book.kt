@@ -20,7 +20,7 @@ class Book(var name: String)
 
 @Composable
 fun BookView(index: Int, book: Book, removeCallback: () -> Unit) {
-    var bookField by state { TextFieldValue(book.name) }
+    var bookField by stateFor(book) { TextFieldValue(book.name) }
 
     Surface(
         shape = RoundedCornerShape(5.dp),
